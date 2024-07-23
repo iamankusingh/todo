@@ -12,3 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.bg-stroke {
+  background-image: url(./assets/pink-stroke.png);
+  background-position: center;
+  background-size: 30% 100%;
+  background-repeat: no-repeat;
+}

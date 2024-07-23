@@ -16,7 +16,7 @@ function App() {
     setInputValue(e.target.value);
   };
 
-  // handle when click on add task button
+  // handle when click on add task button (submiting form)
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
@@ -65,13 +65,13 @@ function App() {
         <section
           className={`${
             tasks == ""
-              ? "flex justify-center"
-              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              ? "flex justify-center" // whon no task then image will be in center (flexbox)
+              : "grid grid-cols-1 md:grid-cols-2 md:auto-cols-max lg:grid-cols-3" // when tasks, display grid for task boxex
           }`}
         >
           {tasks == "" ? (
             <div>
-              {/* image display whon no task is there */}
+              {/* image display when no task is there */}
               <img
                 src={board}
                 alt="boy and girl sticking notes"
@@ -80,7 +80,7 @@ function App() {
             </div>
           ) : (
             // else it display task div (MAIN TASK PRINT LOOP)
-            [...tasks].reverse().map((task, index) => {
+            tasks.map((task, index) => {
               return (
                 <div
                   key={index}
