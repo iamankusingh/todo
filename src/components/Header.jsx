@@ -1,5 +1,4 @@
 import React from "react";
-import stroke from "../assets/pink-stroke.png"
 
 const Header = () => {
   return (
