@@ -15,6 +15,7 @@ const TaskInput = ({ onSubmit }) => {
       <input
         type="text"
         placeholder="Enter your task..."
+        required
         className="p-2 text-xl rounded-xl max-[420px]:w-[70%]"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
@@ -22,7 +23,7 @@ const TaskInput = ({ onSubmit }) => {
 
       <button
         type="submit"
-        className="max-[420px]:p-3 px-6 text-xl bg-blue-300 rounded-xl"
+        className="max-[420px]:p-3 px-6 text-xl bg-blue-300 rounded-xl hover:bg-blue-400 transition-all active:bg-blue-400"
       >
         Add
       </button>
