@@ -20,7 +20,7 @@ function App() {
   const handleFormData = (data) => {
     if (data) {
       // spread ornignal taskList and add inputed task data
-      setTaskList([...taskList, data]);
+      setTaskList([data, ...taskList]);
     }
   };
 
