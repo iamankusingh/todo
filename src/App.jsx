@@ -52,7 +52,13 @@ function App() {
           }
         >
           {taskList == "" ? (
-            <img src={noTaskImg} alt="No task" /> //noTaskImg
+            <div className="text-center">
+              {/* noTaskImg */}
+              <img src={noTaskImg} alt="No task" />
+              <a href="https://icons8.com" target="blank">
+                Icons by Icons8.com
+              </a>
+            </div>
           ) : (
             // -----------MAIN TASK DISPLAY LOOP----------
             taskList.map((task, index) => {
