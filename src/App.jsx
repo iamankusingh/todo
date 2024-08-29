@@ -1,17 +1,22 @@
 // Todo app in react
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import TaskInput from "./components/TaskInput";
 import noTaskImg from "./assets/kanban-board.png";
 import TaskBox from "./components/TaskBox";
 
-const tododKey = "todoApp";
+const localTodoKey = "todoData";
 
 function App() {
-  // main task list state
-  const [taskList, setTaskList] = useState([]);
+  // main task data list state
+  const [taskList, setTaskList] = useState(() => {
+    // seting local data if exists
+    const localTodo = localStorage.getItem(localTodoKey);
+    if (!localTodo) return [];
+    return JSON.parse(localTodo);
+  });
 
-  // data is input value coming from TaskInput.jsx
+  // (data) is input value coming from TaskInput.jsx
   const handleFormData = (data) => {
     if (data) {
       // spread ornignal taskList and add inputed task data
@@ -27,6 +32,11 @@ function App() {
     setTaskList(arrayAfterDeletion);
   };
 
+  // set data to local storage
+  useEffect(() => {
+    localStorage.setItem(localTodoKey, JSON.stringify(taskList));
+  }, [taskList]);
+
   return (
     <>
       <Header />
@@ -37,8 +47,8 @@ function App() {
         <section
           className={
             taskList == ""
-              ? "w-full flex justify-center" // class to display noTaskImage
-              : "grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3" // class to display all tasks
+              ? "w-[100vw] flex justify-center" // class to display noTaskImage
+              : "w-[100vw] p-4 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4" // class to display all tasks
           }
         >
           {taskList == "" ? (
