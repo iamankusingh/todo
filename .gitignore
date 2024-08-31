@@ -10,11 +10,6 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-.eslintrc.cjs
-package-lock.json
-postcss.config.js
-tailwind.config.js
-vite.config.js
 *.local
 
 # Editor directories and files

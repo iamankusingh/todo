@@ -42,13 +42,14 @@ function App() {
       <Header />
 
       <main>
+        {/* recieve data in submit */}
         <TaskInput onSubmit={handleFormData} />
 
         <section
           className={
             taskList == ""
               ? "w-[100vw] flex justify-center" // class to display noTaskImage
-              : "w-[100vw] p-4 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4" // class to display all tasks
+              : "w-[100vw] grid place-items-center grid-rows-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4" // class to display all tasks
           }
         >
           {taskList == "" ? (

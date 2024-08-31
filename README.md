@@ -1,3 +1,3 @@
 # React Todo Application
 
-A simple react todo application.
+A simple react todo note application.

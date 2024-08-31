@@ -6,13 +6,14 @@ const TaskInput = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = [inputValue];
+    // send data to parent
     onSubmit(data);
     setInputValue("");
   };
 
   return (
     <form
-      className="p-2 flex justify-center gap-2 text-black"
+      className="p-4 flex justify-center gap-2 text-black"
       onSubmit={handleSubmit}
     >
       <input
